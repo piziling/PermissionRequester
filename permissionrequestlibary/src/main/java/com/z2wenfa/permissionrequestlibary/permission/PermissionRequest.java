@@ -64,21 +64,28 @@ public class PermissionRequest {
      */
     public static void requestPermission(Activity activity, int requestCode, int... permissions) {
         ArrayList<PermissionEntity> requestEntityList = Util.getEntityListByCodeArr(permissions);
-        ArrayList<PermissionEntity> deniedEntityList = Util.getDeniedEntityListByEntityList(activity, requestEntityList);
-        ArrayList<PermissionEntity> grantedEntityList = Util.getGrantedEntityListByEntityList(activity, requestEntityList);
-        ArrayList<PermissionEntity> shouldShowEntityList = Util.getShouldShowEntityListByEntityList(activity, deniedEntityList);
 
 
-        if (deniedEntityList.size() > 0 && Util.isOverMarshmallow()) {
-            Intent intent = new Intent();
-            intent.putParcelableArrayListExtra(PermissionRequestActivity.PERMISSIONREQUEST_KEY, deniedEntityList);
-            intent.putExtra(PermissionRequestActivity.PERMISSIONREQUESTCODE_KEY, requestCode);
-            intent.setClass(activity, PermissionRequestActivity.class);
-            activity.startActivity(intent);
-            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            Util.sendRequestResult(activity, requestCode, null, null, shouldShowEntityList);
+        if (Util.isOverMarshmallow()) {
+
+            ArrayList<PermissionEntity> deniedEntityList = Util.getDeniedEntityListByEntityList(activity, requestEntityList);
+            ArrayList<PermissionEntity> grantedEntityList = Util.getGrantedEntityListByEntityList(activity, requestEntityList);
+            ArrayList<PermissionEntity> shouldShowEntityList = Util.getShouldShowEntityListByEntityList(activity, deniedEntityList);
+
+            if (deniedEntityList.size() > 0) {
+                Intent intent = new Intent();
+                intent.putParcelableArrayListExtra(PermissionRequestActivity.PERMISSIONREQUEST_KEY, deniedEntityList);
+                intent.putExtra(PermissionRequestActivity.PERMISSIONREQUESTCODE_KEY, requestCode);
+                intent.setClass(activity, PermissionRequestActivity.class);
+                activity.startActivity(intent);
+                activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                Util.sendRequestResult(activity, requestCode, null, null, shouldShowEntityList);
+            } else {
+                Util.sendRequestResult(activity, requestCode, requestEntityList, null, null);
+            }
+
         } else {
-            Util.sendRequestResult(activity, requestCode, grantedEntityList, deniedEntityList, shouldShowEntityList);
+            Util.sendRequestResult(activity, requestCode, requestEntityList, null, null);
         }
     }
 

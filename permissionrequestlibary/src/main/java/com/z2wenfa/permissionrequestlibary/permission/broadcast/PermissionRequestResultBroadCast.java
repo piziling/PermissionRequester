@@ -45,7 +45,7 @@ public class PermissionRequestResultBroadCast extends BroadcastReceiver {
             for (Map.Entry<Object, PermissionRequestResultListener> entrySet : map.entrySet()) {
                 PermissionRequestResultListener permissionRequestResultListener = entrySet.getValue();
                 if (grantedPermissions != null && grantedPermissions.size() > 0) {
-                    boolean getAllRequestPermissions = (deniedPermissions.size() == 0);
+                    boolean getAllRequestPermissions = (deniedPermissions == null || deniedPermissions.size() == 0);
                     permissionRequestResultListener.onGetGrantedPermission(requestCode, grantedPermissions, getAllRequestPermissions);
                 }
 
