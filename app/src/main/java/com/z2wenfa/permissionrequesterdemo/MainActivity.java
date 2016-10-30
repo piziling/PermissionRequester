@@ -18,14 +18,14 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initView();
 
-        //在OnCreate方法中请求权限
+
         PermissionRequest.requestPermissionInOnCreateMethod(this, 2015, Permissions.CAMERA, Permissions.LOCATION);
     }
 
 
     private void initView() {
         button = (Button) findViewById(R.id.btn1);
-        //通过点击事件请求权限
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

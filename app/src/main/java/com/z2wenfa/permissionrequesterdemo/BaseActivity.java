@@ -25,7 +25,7 @@ public class BaseActivity extends AppCompatActivity implements PermissionRequest
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         /**
-         * 注册权限请求结果监听器
+         *
          */
         PermissionRequest.registerBroadCast(this, this, tag);
     }
@@ -53,7 +53,7 @@ public class BaseActivity extends AppCompatActivity implements PermissionRequest
     protected void onDestroy() {
         super.onDestroy();
         /**
-         * 反注册监听器 释放内存
+         *
          */
         PermissionRequest.unRegisterBroadCast(tag);
     }

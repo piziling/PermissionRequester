@@ -6,20 +6,16 @@ import android.util.SparseArray;
 
 import com.z2wenfa.permissionrequestlibary.permission.bean.PermissionEntity;
 
-/**
- * 权限请求码
- * Created by z2wenfa on 2016/5/3.
- */
 public class Permissions {
-    public static final int CALENDAR = 1; //日历
-    public static final int CAMERA = 2; //照相机
-    public static final int CONTACTS = 3; //联系人
-    public static final int LOCATION = 4;//位置
-    public static final int MICROPHONE = 5; //麦克风
-    public static final int PHONE = 6; //打电话
-    public static final int SENSORS = 7; //传感器
-    public static final int SMS = 8; //接收短信
-    public static final int STORAGE = 9; //读取sd卡
+    public static final int CALENDAR = 1;
+    public static final int CAMERA = 2;
+    public static final int CONTACTS = 3;
+    public static final int LOCATION = 4;
+    public static final int MICROPHONE = 5;
+    public static final int PHONE = 6;
+    public static final int SENSORS = 7;
+    public static final int SMS = 8;
+    public static final int STORAGE = 9;
 
 
     private static SparseArray<PermissionEntity> permissionMap;

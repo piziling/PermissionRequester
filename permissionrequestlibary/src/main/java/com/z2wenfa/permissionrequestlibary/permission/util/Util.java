@@ -27,7 +27,7 @@ public class Util {
     }
 
     /**
-     * 找到没有获得的权限字符串集合
+     *
      *
      * @param activity
      * @param permission
@@ -46,7 +46,7 @@ public class Util {
 
 
     /**
-     * 获得Permission Str
+     * Permission Str
      *
      * @param permissionCode Code
      * @return
@@ -78,9 +78,9 @@ public class Util {
     }
 
     /**
-     * 获得 Str[]
      *
-     * @param entityList 实体集合
+     *
+     * @param entityList
      * @return
      */
     public static String[] getStrArrByEntityList(ArrayList<PermissionEntity> entityList) {
@@ -93,7 +93,7 @@ public class Util {
 
 
     /**
-     * 获得权限实体
+     *
      *
      * @param manifestPermissionStr String
      * @return
@@ -110,7 +110,7 @@ public class Util {
     }
 
     /**
-     * 获得权限实体集合
+     *
      *
      * @param manifestPermissionStrArr String[]
      * @return
@@ -125,7 +125,7 @@ public class Util {
 
 
     /**
-     * 获得Permission实体
+     *
      *
      * @param permissionCode code
      * @return
@@ -136,7 +136,7 @@ public class Util {
     }
 
     /**
-     * 获得权限实体集合通过
+     *
      *
      * @param permissionCodeArr Code[]
      * @return
@@ -151,10 +151,10 @@ public class Util {
 
 
     /**
-     * 获得禁止的权限
+     *
      *
      * @param activity
-     * @param permissionEntityArrayList 权限实体集合
+     * @param permissionEntityArrayList
      * @return
      */
     @TargetApi(Build.VERSION_CODES.M)
@@ -170,10 +170,10 @@ public class Util {
     }
 
     /**
-     * 获得允许的权限
+     *
      *
      * @param activity
-     * @param permissionEntityArrayList 权限实体集合
+     * @param permissionEntityArrayList
      * @return
      */
     @TargetApi(Build.VERSION_CODES.M)
@@ -189,7 +189,7 @@ public class Util {
     }
 
     /**
-     * 获得需要告知为什么请求的权限集合
+     *
      *
      * @param activity
      * @param permissionEntityArrayList
@@ -208,7 +208,7 @@ public class Util {
     }
 
     /**
-     * 发送请求结果
+     *
      *
      * @param activity
      * @param requestCode

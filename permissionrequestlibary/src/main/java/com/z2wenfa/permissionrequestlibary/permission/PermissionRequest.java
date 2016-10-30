@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import static com.z2wenfa.permissionrequestlibary.permission.broadcast.PermissionRequestResultBroadCast.PERMISSIONREQUESTRESULT_ACTION;
 
 /**
- * 权限请求工具类
+ *
  * Created by z2wenfa on 2016/10/21.
  */
 public class PermissionRequest {
@@ -29,7 +29,7 @@ public class PermissionRequest {
     }
 
     /**
-     * 注册权限请求结果监听 (需在请求权限前注册)
+     *
      *
      * @param activity
      * @param requestResultListener
@@ -47,7 +47,7 @@ public class PermissionRequest {
     }
 
     /**
-     * 反注册权限请求结果监听器
+     *
      *
      * @param tag
      */
@@ -56,7 +56,7 @@ public class PermissionRequest {
     }
 
     /**
-     * 一般的请求权限
+     *
      *
      * @param activity
      * @param requestCode
@@ -91,7 +91,7 @@ public class PermissionRequest {
 
 
     /**
-     * 在OnCreate方法中请求权限
+     *
      *
      * @param activity
      * @param requestCode

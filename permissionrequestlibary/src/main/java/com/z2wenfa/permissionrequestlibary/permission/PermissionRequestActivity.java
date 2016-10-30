@@ -21,8 +21,8 @@ public class PermissionRequestActivity extends Activity {
     public static final String PERMISSIONREQUEST_KEY = "permissionrequest_key";
     public static final String PERMISSIONREQUESTCODE_KEY = "permissionrequestcode_key";
 
-    private ArrayList<PermissionEntity> requestEntityList; //请求对象集合
-    private int requestCode; //请求码
+    private ArrayList<PermissionEntity> requestEntityList;
+    private int requestCode;
 
 
     @Override
@@ -46,7 +46,7 @@ public class PermissionRequestActivity extends Activity {
 
 
     /**
-     * 请求未获得的权限权限
+     *
      *
      * @param requestCode
      * @param permissions
@@ -65,7 +65,7 @@ public class PermissionRequestActivity extends Activity {
     }
 
     /**
-     * 请求结果处理
+     *
      *
      * @param requestCode
      * @param permissions
@@ -92,7 +92,7 @@ public class PermissionRequestActivity extends Activity {
     }
 
     /**
-     * 发送处理的结果并关闭界面
+     *
      *
      * @param requestCode
      * @param grantedPermissions

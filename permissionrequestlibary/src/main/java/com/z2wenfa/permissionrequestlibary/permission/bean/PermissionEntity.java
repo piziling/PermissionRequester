@@ -3,9 +3,7 @@ package com.z2wenfa.permissionrequestlibary.permission.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by z2wenfa on 2016/10/24.
- */
+
 public class PermissionEntity implements Parcelable {
     private int permissionCode;
     private String permissionManifestStr;
