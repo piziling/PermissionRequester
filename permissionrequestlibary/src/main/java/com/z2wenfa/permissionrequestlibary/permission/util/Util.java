@@ -26,13 +26,7 @@ public class Util {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }
 
-    /**
-     *
-     *
-     * @param activity
-     * @param permission
-     * @return
-     */
+
     @TargetApi(value = Build.VERSION_CODES.M)
     public static ArrayList<String> findDeniedStrListByStrArr(Activity activity, String... permission) {
         ArrayList<String> denyPermissions = new ArrayList<>();
@@ -45,12 +39,7 @@ public class Util {
     }
 
 
-    /**
-     * Permission Str
-     *
-     * @param permissionCode Code
-     * @return
-     */
+
     public static String getPermissionStrByCode(int permissionCode) {
         switch (permissionCode) {
             case Permissions.CALENDAR:
@@ -77,12 +66,7 @@ public class Util {
         return Manifest.permission.CAMERA;
     }
 
-    /**
-     *
-     *
-     * @param entityList
-     * @return
-     */
+
     public static String[] getStrArrByEntityList(ArrayList<PermissionEntity> entityList) {
         String[] strArr = new String[entityList.size()];
         for (int i = 0; i < entityList.size(); i++) {
@@ -92,12 +76,7 @@ public class Util {
     }
 
 
-    /**
-     *
-     *
-     * @param manifestPermissionStr String
-     * @return
-     */
+
     public static PermissionEntity getEntityByStr(String manifestPermissionStr) {
         SparseArray<PermissionEntity> permissionEntitySparseArray = getPermissionMap();
         for (int i = 0; i < permissionEntitySparseArray.size(); i++) {
@@ -106,15 +85,10 @@ public class Util {
                 return permissionEntity;
             }
         }
-        throw new RuntimeException("请输入正确的权限Manifest String!");
+        throw new RuntimeException("Please input correct permission Manifest String!");
     }
 
-    /**
-     *
-     *
-     * @param manifestPermissionStrArr String[]
-     * @return
-     */
+
     public static ArrayList<PermissionEntity> getEntityListByStrArr(String[] manifestPermissionStrArr) {
         ArrayList<PermissionEntity> permissionEntityArrayList = new ArrayList<>();
         for (int i = 0; i < manifestPermissionStrArr.length; i++) {
@@ -124,23 +98,12 @@ public class Util {
     }
 
 
-    /**
-     *
-     *
-     * @param permissionCode code
-     * @return
-     */
     public static PermissionEntity getEntityByCode(int permissionCode) {
         SparseArray<PermissionEntity> permissionEntitySparseArray = getPermissionMap();
         return permissionEntitySparseArray.get(permissionCode, permissionEntitySparseArray.get(Permissions.CAMERA));
     }
 
-    /**
-     *
-     *
-     * @param permissionCodeArr Code[]
-     * @return
-     */
+
     public static ArrayList<PermissionEntity> getEntityListByCodeArr(int[] permissionCodeArr) {
         ArrayList<PermissionEntity> permissionEntityArrayList = new ArrayList<>();
         for (int i = 0; i < permissionCodeArr.length; i++) {
@@ -150,13 +113,7 @@ public class Util {
     }
 
 
-    /**
-     *
-     *
-     * @param activity
-     * @param permissionEntityArrayList
-     * @return
-     */
+
     @TargetApi(Build.VERSION_CODES.M)
     public static ArrayList<PermissionEntity> getDeniedEntityListByEntityList(Activity activity, ArrayList<PermissionEntity> permissionEntityArrayList) {
         ArrayList<PermissionEntity> deniedEntityList = new ArrayList<>();
@@ -169,13 +126,7 @@ public class Util {
         return deniedEntityList;
     }
 
-    /**
-     *
-     *
-     * @param activity
-     * @param permissionEntityArrayList
-     * @return
-     */
+
     @TargetApi(Build.VERSION_CODES.M)
     public static ArrayList<PermissionEntity> getGrantedEntityListByEntityList(Activity activity, ArrayList<PermissionEntity> permissionEntityArrayList) {
         ArrayList<PermissionEntity> deniedEntityList = new ArrayList<>();
@@ -188,13 +139,7 @@ public class Util {
         return deniedEntityList;
     }
 
-    /**
-     *
-     *
-     * @param activity
-     * @param permissionEntityArrayList
-     * @return
-     */
+
     @TargetApi(Build.VERSION_CODES.M)
     public static ArrayList<PermissionEntity> getShouldShowEntityListByEntityList(Activity activity, ArrayList<PermissionEntity> permissionEntityArrayList) {
         ArrayList<PermissionEntity> shouldShowEntityList = new ArrayList<>();
@@ -207,15 +152,7 @@ public class Util {
         return shouldShowEntityList;
     }
 
-    /**
-     *
-     *
-     * @param activity
-     * @param requestCode
-     * @param grantedPermissions
-     * @param deniedPermissions
-     * @param shouldShowPermissionEntity
-     */
+
     public static void sendRequestResult(Activity activity, int requestCode, ArrayList<PermissionEntity> grantedPermissions, ArrayList<PermissionEntity> deniedPermissions, ArrayList<PermissionEntity> shouldShowPermissionEntity) {
         LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(activity);
         Intent intent = new Intent(PermissionRequestResultBroadCast.PERMISSIONREQUESTRESULT_ACTION);

@@ -15,10 +15,7 @@ import java.util.ArrayList;
 
 import static com.z2wenfa.permissionrequestlibary.permission.broadcast.PermissionRequestResultBroadCast.PERMISSIONREQUESTRESULT_ACTION;
 
-/**
- *
- * Created by z2wenfa on 2016/10/21.
- */
+
 public class PermissionRequest {
 
     private static PermissionRequestResultBroadCast permissionRequestResultBroadCast;
@@ -28,13 +25,7 @@ public class PermissionRequest {
         return permissionRequestResultBroadCast;
     }
 
-    /**
-     *
-     *
-     * @param activity
-     * @param requestResultListener
-     * @param tag
-     */
+
     public static void registerBroadCast(Activity activity, PermissionRequestResultListener requestResultListener, Object tag) {
         if (permissionRequestResultBroadCast == null) {
             permissionRequestResultBroadCast = new PermissionRequestResultBroadCast();
@@ -46,22 +37,12 @@ public class PermissionRequest {
         permissionRequestResultBroadCast.addRequestResultListener(tag, requestResultListener);
     }
 
-    /**
-     *
-     *
-     * @param tag
-     */
+
     public static void unRegisterBroadCast(Object tag) {
         getPermissionRequestResultBroadCast().removeRequestResultListener(tag);
     }
 
-    /**
-     *
-     *
-     * @param activity
-     * @param requestCode
-     * @param permissions
-     */
+
     public static void requestPermission(Activity activity, int requestCode, int... permissions) {
         ArrayList<PermissionEntity> requestEntityList = Util.getEntityListByCodeArr(permissions);
 
@@ -90,13 +71,7 @@ public class PermissionRequest {
     }
 
 
-    /**
-     *
-     *
-     * @param activity
-     * @param requestCode
-     * @param permissions
-     */
+
     public static void requestPermissionInOnCreateMethod(final Activity activity, final int requestCode, final int... permissions) {
         new Handler().postDelayed(new Runnable() {
                                       @Override

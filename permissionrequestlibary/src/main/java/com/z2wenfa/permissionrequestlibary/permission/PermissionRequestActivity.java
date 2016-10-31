@@ -13,9 +13,6 @@ import com.z2wenfa.permissionrequestlibary.permission.util.Util;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by z2wenfa on 2016/10/21.
- */
 
 public class PermissionRequestActivity extends Activity {
     public static final String PERMISSIONREQUEST_KEY = "permissionrequest_key";
@@ -45,12 +42,7 @@ public class PermissionRequestActivity extends Activity {
     }
 
 
-    /**
-     *
-     *
-     * @param requestCode
-     * @param permissions
-     */
+
     @TargetApi(Build.VERSION_CODES.M)
     private void _requestPermissions(int requestCode, String... permissions) {
         List<String> deniedPermissions = Util.findDeniedStrListByStrArr(this, permissions);
@@ -64,13 +56,7 @@ public class PermissionRequestActivity extends Activity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    /**
-     *
-     *
-     * @param requestCode
-     * @param permissions
-     * @param grantResults
-     */
+
     @TargetApi(Build.VERSION_CODES.M)
     private void execRequestResult(int requestCode, String[] permissions, int[] grantResults) {
         ArrayList<PermissionEntity> deniedPermissions = new ArrayList<>();
@@ -91,14 +77,7 @@ public class PermissionRequestActivity extends Activity {
         sendRequestResultAndFinish(this, requestCode, grantedPermissions, deniedPermissions, shouldShowPermissions);
     }
 
-    /**
-     *
-     *
-     * @param requestCode
-     * @param grantedPermissions
-     * @param deniedPermissions
-     * @param shouldShowPermissionEntity
-     */
+
     private void sendRequestResultAndFinish(Activity activity, int requestCode, ArrayList<PermissionEntity> grantedPermissions, ArrayList<PermissionEntity> deniedPermissions, ArrayList<PermissionEntity> shouldShowPermissionEntity) {
         Util.sendRequestResult(activity, requestCode, grantedPermissions, deniedPermissions, shouldShowPermissionEntity);
         finish();

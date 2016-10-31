@@ -23,40 +23,16 @@ android {
     productFlavors {
     }
 
-    tasks.withType(JavaCompile) {
-        options.encoding = "UTF-8"
-        options.compilerArgs << "-Xlint:unchecked"
-    }
-
 
 }
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-javadoc {
-    options {
-        encoding "UTF-8"
-        charSet 'UTF-8'
-        author true
-        version true
-        links "http://docs.oracle.com/javase/7/docs/api"
-    }
-}
-
-
-
 
 publish {
-    userOrg = 'z2wenfa'//bintray.com用户名
-    groupId = 'com.z2wenfa'//jcenter上的路径
+    userOrg = 'z2wenfastudio'//组织名
+    groupId = 'com.z2wenfa'//组织id
     artifactId = 'PermissionRequester'//项目名称
     publishVersion = '1.0.0'//版本号
-    desc = 'Oh hi, this is a nice description for a project, right?'//描述，不重要
+    desc = 'Oh hi, this is a nice description for a project, right?'
     website = 'https://github.com/z2wenfa/PermissionRequester'
-//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }
 
 

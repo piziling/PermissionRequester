@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by z2wenfa on 2016/10/25.
- */
+
 
 public class PermissionRequestResultBroadCast extends BroadcastReceiver {
     public static final String PERMISSIONREQUESTRESULT_ACTION = "PERMISSIONrEQUESTrESULT_ACTION";
