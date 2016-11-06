@@ -17,9 +17,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-
-
-        PermissionRequest.requestPermissionInOnCreateMethod(this, 2015, Permissions.CAMERA, Permissions.LOCATION);
+        PermissionRequest.requestPermissionInOnCreateMethod(this, 2015, Permissions.CAMERA, Permissions.LOCATION);//在界面还未显示前进行权限请求
     }
 
 
@@ -29,7 +27,7 @@ public class MainActivity extends BaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PermissionRequest.requestPermission(MainActivity.this, 2015, Permissions.CONTACTS, Permissions.SMS);
+                PermissionRequest.requestPermission(MainActivity.this, 2015, Permissions.CONTACTS, Permissions.SMS); //界面已经显示了进行权限的请求
             }
         });
 
